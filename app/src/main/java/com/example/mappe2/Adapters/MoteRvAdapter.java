@@ -2,6 +2,7 @@ package com.example.mappe2.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -78,14 +79,17 @@ public class MoteRvAdapter extends RecyclerView.Adapter<MoteRvAdapter.ViewHolder
         public void onClick(View view) {
             int position = getAdapterPosition();
             Mote mote = moteList.get(position);
-            Intent intent = new Intent(mContext, MoteActivity.class);
+            if(itemView.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
 
-            intent.putExtra("navn", mote.getNavn());
-            intent.putExtra("type", mote.getType());
-            intent.putExtra("sted", mote.getSted());
-            intent.putExtra("dato", mote.getDato());
+                Intent intent = new Intent(mContext, MoteActivity.class);
 
-            mContext.startActivity(intent);
+                intent.putExtra("navn", mote.getNavn());
+                intent.putExtra("type", mote.getType());
+                intent.putExtra("sted", mote.getSted());
+                intent.putExtra("dato", mote.getDato());
+
+                mContext.startActivity(intent);
+            }
 
         }
 

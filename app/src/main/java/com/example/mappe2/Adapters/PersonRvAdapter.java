@@ -2,6 +2,7 @@ package com.example.mappe2.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,12 +76,14 @@ public class PersonRvAdapter extends RecyclerView.Adapter<PersonRvAdapter.ViewHo
         public void onClick(View view) {
             int position = getAdapterPosition();
             Person person = mpersonList.get(position);
-            Intent intent = new Intent(mContext, PersonActivity.class);
+            if(itemView.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
 
-            intent.putExtra("navn2", person.getNavn());
-            intent.putExtra("telefonnr2", person.getTelefonnr());
+                Intent intent = new Intent(mContext, PersonActivity.class);
+                intent.putExtra("navn2", person.getNavn());
+                intent.putExtra("telefonnr2", person.getTelefonnr());
 
-            mContext.startActivity(intent);
+                mContext.startActivity(intent);
+            }
         }
 
         @Override
