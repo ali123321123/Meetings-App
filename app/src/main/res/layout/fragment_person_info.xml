@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".Fragments.PersonInfo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="0dp"
+        android:layout_weight="4">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            app:endIconMode="clear_text"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Navn"
+                android:id="@+id/navn2"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            app:endIconMode="clear_text"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Telefonnummer"
+                android:id="@+id/telefonnr2"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4">
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            app:icon="@drawable/ic_lagre"
+            app:strokeWidth="2dp"
+            android:paddingLeft="4dp"
+            app:strokeColor="@color/colorPrimary"
+            app:elevation="5dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+
+
+        </com.google.android.material.button.MaterialButton>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            app:icon="@drawable/add"
+            app:strokeWidth="2dp"
+            android:paddingLeft="4dp"
+            app:strokeColor="@color/colorPrimary"
+            app:elevation="5dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_marginRight="30dp">
+
+
+        </com.google.android.material.button.MaterialButton>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            app:icon="@drawable/ic_endre"
+            app:strokeWidth="2dp"
+            android:paddingLeft="4dp"
+            app:strokeColor="@color/colorPrimary"
+            app:elevation="5dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+
+            >
+
+        </com.google.android.material.button.MaterialButton>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            app:strokeWidth="2dp"
+            android:paddingLeft="4dp"
+            app:strokeColor="@color/colorPrimary"
+            app:elevation="5dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            app:icon="@drawable/ic_slette"
+            android:layout_marginRight="30dp">
+
+        </com.google.android.material.button.MaterialButton>
+    </LinearLayout>
+
+
+
+</LinearLayout>

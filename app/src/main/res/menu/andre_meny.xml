@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/meny_lagre"
+        android:icon="@drawable/ic_lagre"
+        android:title="Lagre"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/meny_endre"
+        android:icon="@drawable/ic_endre"
+        android:title="Endre"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/meny_slette"
+        android:icon="@drawable/ic_slette"
+        android:title="Slette"
+        app:showAsAction="always"/>
+
+</menu>

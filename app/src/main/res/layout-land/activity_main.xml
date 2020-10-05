@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.5"
+            android:orientation="vertical">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    >
+
+                </androidx.appcompat.widget.Toolbar>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:tabGravity="fill"
+                    app:tabIndicatorColor="@color/colorPrimaryDark"
+                    app:tabTextColor="#000000"
+                    app:tabMode="fixed"
+                    app:tabMaxWidth="0dp"
+                    android:background="#8fa9ac"
+                    />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1.2"
+                android:layout_height="match_parent">
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+                </androidx.viewpager.widget.ViewPager>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+
+                    <fragment
+                    android:id="@+id/frag"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    class="com.example.mappe2.Fragments.MoteInfo"
+                    tools:context="@layout/fragment_mote_info">
+                    </fragment>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/add_foreground"
+        android:id="@+id/main_fab"
+        app:backgroundTint="#8fa9ac"
+        app:tint="?attr/colorPrimaryDark"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="15dp"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
