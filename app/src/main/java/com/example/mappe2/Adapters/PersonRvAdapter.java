@@ -3,14 +3,19 @@ package com.example.mappe2.Adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mappe2.Fragments.PersonInfo;
+import com.example.mappe2.MainActivity;
 import com.example.mappe2.Modul.Mote;
 import com.example.mappe2.Modul.Person;
 import com.example.mappe2.MoteActivity;
@@ -84,6 +89,19 @@ public class PersonRvAdapter extends RecyclerView.Adapter<PersonRvAdapter.ViewHo
 
                 mContext.startActivity(intent);
             }
+            /*else {
+
+                PersonInfo personInfo = new PersonInfo();
+                Bundle bundle = new Bundle();
+                bundle.getString("navnen", person.getNavn());
+                bundle.getString("telefonnummer", person.getTelefonnr());
+
+
+
+                personInfo.setArguments(bundle);
+
+
+            }*/
         }
 
         @Override

@@ -1,5 +1,6 @@
 package com.example.mappe2.Fragments;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -9,7 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.example.mappe2.Adapters.MoteRvAdapter;
+import com.example.mappe2.MainActivity;
 import com.example.mappe2.Modul.Mote;
+import com.example.mappe2.Modul.Person;
 import com.example.mappe2.R;
 import java.util.ArrayList;
 
@@ -52,7 +55,7 @@ public class MoteFragment extends Fragment {
         moter.add(new Mote("Møte12","Generel","10/10/2020","Sandvika", R.drawable.mote));
         moter.add(new Mote("Møte13","Generel","10/10/2020","Sandvika", R.drawable.mote));
 
-        MoteRvAdapter adapter = new MoteRvAdapter(getContext() , moter);
+        final MoteRvAdapter adapter = new MoteRvAdapter(getContext() , moter);
 
         RecyclerView.LayoutManager layoutManager;
         layoutManager = new LinearLayoutManager(getContext());
@@ -61,7 +64,7 @@ public class MoteFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
-        /*adapter.setOnItemClickListener(new MoteRvAdapter.ClickListener() {
+        adapter.setOnItemClickListener(new MoteRvAdapter.ClickListener() {
             @Override
             public void onItemClick(int position, View v) {
 
@@ -71,7 +74,7 @@ public class MoteFragment extends Fragment {
             public void onItemLongClick(int position, View v) {
 
             }
-        });*/
+        });
 
 
 

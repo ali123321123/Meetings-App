@@ -25,20 +25,17 @@ public class PersonInfo extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_person_info, container, false);
 
         navn = v.findViewById(R.id.navn2);
         telfonnr = v.findViewById(R.id.telefonnr2);
 
-        /*bundle = getIntent().getExtras();
+        bundle = getArguments();
 
         if(bundle != null){
-            navn.setText(bundle.getString("navn2"));
-            telfonnr.setText(bundle.getString("telefonnr2"));
-
-        }*/
-
+            navn.setText(bundle.getString("navnen"));
+            telfonnr.setText(bundle.getString("telefonnummer"));
+        }
         return v;
     }
 }

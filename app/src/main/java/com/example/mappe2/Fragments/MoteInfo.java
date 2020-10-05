@@ -34,15 +34,14 @@ public class MoteInfo extends Fragment {
         sted = v.findViewById(R.id.sted1);
         dato = v.findViewById(R.id.dato1);
 
+        extras = getArguments();
 
-        /*extras = getIntent().getExtras();
         if(extras != null){
             navn.setText(extras.getString("navn"));
             type.setText(extras.getString("type"));
             sted.setText(extras.getString("sted"));
             dato.setText(extras.getString("dato"));
-        }*/
-
+        }
         return v;
     }
 

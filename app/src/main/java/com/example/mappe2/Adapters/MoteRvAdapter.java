@@ -26,7 +26,7 @@ public class MoteRvAdapter extends RecyclerView.Adapter<MoteRvAdapter.ViewHolder
     private static ClickListener clickListener;
     Context mContext;
 
-    private List<Mote> moteList;
+    public List<Mote> moteList;
 
     public MoteRvAdapter(Context context, List<Mote> list){
         this.mContext = context;
