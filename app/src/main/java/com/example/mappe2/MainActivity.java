@@ -4,11 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
-
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
@@ -16,9 +12,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.Toast;
-
 import com.example.mappe2.Adapters.ViewPagerAdapter;
 import com.example.mappe2.Fragments.MoteFragment;
 import com.example.mappe2.Fragments.MoteInfo;
@@ -59,50 +52,65 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
-        tabLayout.getTabAt(0).setIcon(R.drawable.mote);
-        tabLayout.getTabAt(1).setIcon(R.drawable.person);
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+            tabLayout.getTabAt(0).setIcon(R.drawable.mote);
+            tabLayout.getTabAt(1).setIcon(R.drawable.person);
+        }
 
-        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            fab.setEnabled(false);
-            fab.setVisibility(View.GONE);
-            tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-                @Override
-                public void onTabSelected(TabLayout.Tab tab) {
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), MoteActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                    fab.setEnabled(false);
+                    fab.setVisibility(View.GONE);
                     if(tabLayout.getSelectedTabPosition() == 0){
+
                         getSupportFragmentManager().beginTransaction().replace(R.id.frag, new MoteInfo()).addToBackStack(null).commit();
                     }
                     else{
                         getSupportFragmentManager().beginTransaction().replace(R.id.frag, new PersonInfo()).addToBackStack(null).commit();
                     }
                 }
-
-                @Override
-                public void onTabUnselected(TabLayout.Tab tab) {
-
+                if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+                    if(tabLayout.getSelectedTabPosition() == 1){
+                        fab.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(getBaseContext(), PersonActivity.class);
+                                startActivity(intent);
+                            }
+                        });
+                    }
+                    else {
+                        fab.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(getBaseContext(), MoteActivity.class);
+                                startActivity(intent);
+                            }
+                        });
+                    }
                 }
+            }
 
-                @Override
-                public void onTabReselected(TabLayout.Tab tab) {
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
 
-                }
-            });
+            }
 
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
 
-        }
-
-        else {
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(getBaseContext(), MoteActivity.class);
-                    startActivity(intent);
-                }
-            });
-        }
-
-
-
-
+            }
+        });
 
     }
 
@@ -130,5 +138,5 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
-    
+
 }

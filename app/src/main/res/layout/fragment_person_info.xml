@@ -26,6 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="Navn"
+                android:textSize="14dp"
                 android:id="@+id/navn2"
                 />
 
@@ -45,6 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="Telefonnummer"
+                android:textSize="14dp"
                 android:id="@+id/telefonnr2"
                 />
 
@@ -67,12 +69,12 @@
             android:layout_height="match_parent"
             app:icon="@drawable/ic_lagre"
             app:strokeWidth="2dp"
-            android:paddingLeft="4dp"
+            android:paddingLeft="6dp"
             app:strokeColor="@color/colorPrimary"
             app:elevation="5dp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp">
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp">
 
 
         </com.google.android.material.button.MaterialButton>
@@ -83,11 +85,11 @@
             android:layout_height="match_parent"
             app:icon="@drawable/add"
             app:strokeWidth="2dp"
-            android:paddingLeft="4dp"
+            android:paddingLeft="6dp"
             app:strokeColor="@color/colorPrimary"
             app:elevation="5dp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-            android:layout_marginRight="30dp">
+            android:layout_marginRight="25dp">
 
 
         </com.google.android.material.button.MaterialButton>
@@ -97,7 +99,7 @@
             android:layout_height="match_parent"
             app:icon="@drawable/ic_endre"
             app:strokeWidth="2dp"
-            android:paddingLeft="4dp"
+            android:paddingLeft="6dp"
             app:strokeColor="@color/colorPrimary"
             app:elevation="5dp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
@@ -109,14 +111,14 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="25dp"
             app:strokeWidth="2dp"
-            android:paddingLeft="4dp"
+            android:paddingLeft="6dp"
             app:strokeColor="@color/colorPrimary"
             app:elevation="5dp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
             app:icon="@drawable/ic_slette"
-            android:layout_marginRight="30dp">
+            android:layout_marginRight="25dp">
 
         </com.google.android.material.button.MaterialButton>
     </LinearLayout>

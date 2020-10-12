@@ -22,6 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Møte navn"
+            android:textSize="14dp"
             android:id="@+id/navn1"
             />
 
@@ -41,6 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Type"
+            android:textSize="14dp"
             android:id="@+id/type1"
             />
 
@@ -61,6 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Sted"
+            android:textSize="14dp"
             android:id="@+id/sted1"
             />
 
@@ -79,6 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Dato"
+            android:textSize="14dp"
             android:id="@+id/dato1"
             />
 
@@ -96,12 +100,12 @@
             android:layout_height="match_parent"
             app:icon="@drawable/ic_lagre"
             app:strokeWidth="2dp"
-            android:paddingLeft="4dp"
+            android:paddingLeft="6dp"
             app:strokeColor="@color/colorPrimary"
             app:elevation="5dp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp">
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp">
 
 
         </com.google.android.material.button.MaterialButton>
@@ -112,11 +116,11 @@
             android:layout_height="match_parent"
             app:icon="@drawable/add"
             app:strokeWidth="2dp"
-            android:paddingLeft="4dp"
+            android:paddingLeft="6dp"
             app:strokeColor="@color/colorPrimary"
             app:elevation="5dp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-            android:layout_marginRight="30dp">
+            android:layout_marginRight="25dp">
 
 
         </com.google.android.material.button.MaterialButton>
@@ -126,7 +130,7 @@
             android:layout_height="match_parent"
             app:icon="@drawable/ic_endre"
             app:strokeWidth="2dp"
-            android:paddingLeft="4dp"
+            android:paddingLeft="6dp"
             app:strokeColor="@color/colorPrimary"
             app:elevation="5dp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
@@ -140,13 +144,13 @@
             android:layout_height="match_parent"
 
             app:strokeWidth="2dp"
-            android:paddingLeft="4dp"
+            android:paddingLeft="6dp"
             app:strokeColor="@color/colorPrimary"
             app:elevation="5dp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
             app:icon="@drawable/ic_slette"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp">
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp">
 
         </com.google.android.material.button.MaterialButton>
 

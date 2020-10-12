@@ -1,29 +1,23 @@
 package com.example.mappe2.Fragments;
 
-import android.graphics.drawable.ColorDrawable;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
 import com.example.mappe2.R;
 import com.google.android.material.textfield.TextInputEditText;
-
 
 public class MoteInfo extends Fragment {
 
     private TextInputEditText navn, type, sted, dato;
-    private Bundle extras;
     View v;
 
     public MoteInfo() {
     }
 
+    @SuppressLint("LongLogTag")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -34,14 +28,17 @@ public class MoteInfo extends Fragment {
         sted = v.findViewById(R.id.sted1);
         dato = v.findViewById(R.id.dato1);
 
-        extras = getArguments();
+        Bundle bundle = this.getArguments();
 
-        if(extras != null){
-            navn.setText(extras.getString("navn"));
-            type.setText(extras.getString("type"));
-            sted.setText(extras.getString("sted"));
-            dato.setText(extras.getString("dato"));
+        //Log.e("value Fragment get Argument", "friendsID :" + navn);
+
+        if(bundle != null){
+            navn.setText(bundle.get("navn8").toString());
+            type.setText(bundle.get("type8").toString());
+            sted.setText(bundle.get("sted8").toString());
+            dato.setText(bundle.get("dato8").toString());
         }
+
         return v;
     }
 

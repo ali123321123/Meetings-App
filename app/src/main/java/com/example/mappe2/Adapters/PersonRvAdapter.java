@@ -1,39 +1,28 @@
 package com.example.mappe2.Adapters;
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.res.Configuration;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.mappe2.Fragments.PersonInfo;
-import com.example.mappe2.MainActivity;
-import com.example.mappe2.Modul.Mote;
 import com.example.mappe2.Modul.Person;
-import com.example.mappe2.MoteActivity;
-import com.example.mappe2.PersonActivity;
 import com.example.mappe2.R;
-import java.util.ArrayList;
+import com.example.mappe2.RecyclerViewInterface;
 import java.util.List;
 
 public class PersonRvAdapter extends RecyclerView.Adapter<PersonRvAdapter.ViewHolder> {
 
-    private static ClickListener clickListener;
+    private RecyclerViewInterface recyclerViewInterface;
     Context mContext;
-
     private List<Person> mpersonList;
 
-    public PersonRvAdapter(Context context, List<Person> listPerson){
+    public PersonRvAdapter(Context context, List<Person> listPerson, RecyclerViewInterface recyclerViewInterface){
         this.mContext = context;
         mpersonList = listPerson;
+        this.recyclerViewInterface = recyclerViewInterface;
     }
 
     @NonNull
@@ -62,59 +51,35 @@ public class PersonRvAdapter extends RecyclerView.Adapter<PersonRvAdapter.ViewHo
         return mpersonList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder
-            implements View.OnClickListener, View.OnLongClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView navn, telefonnr;
         ImageView imageView;
 
         public ViewHolder(View itemView){
             super(itemView);
-            itemView.setOnClickListener(this);
             navn = itemView.findViewById(R.id.person);
             telefonnr = itemView.findViewById(R.id.telefonnr);
             imageView = itemView.findViewById(R.id.imageView1);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    recyclerViewInterface.onItemClick(getAdapterPosition());
+                }
+            });
+
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    recyclerViewInterface.onLongItemClick(getAdapterPosition());
+                    return true;
+                }
+
+            });
+
         }
 
-        @Override
-        public void onClick(View view) {
-            int position = getAdapterPosition();
-            Person person = mpersonList.get(position);
-            if(itemView.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
-
-                Intent intent = new Intent(mContext, PersonActivity.class);
-                intent.putExtra("navn2", person.getNavn());
-                intent.putExtra("telefonnr2", person.getTelefonnr());
-
-                mContext.startActivity(intent);
-            }
-            /*else {
-
-                PersonInfo personInfo = new PersonInfo();
-                Bundle bundle = new Bundle();
-                bundle.getString("navnen", person.getNavn());
-                bundle.getString("telefonnummer", person.getTelefonnr());
-
-
-
-                personInfo.setArguments(bundle);
-
-
-            }*/
-        }
-
-        @Override
-        public boolean onLongClick(View view) {
-            clickListener.onItemLongClick(getAdapterPosition(), view);
-            return false;
-        }
     }
-
-    public interface ClickListener {
-        void onItemClick(int position, View v);
-        void onItemLongClick(int position, View v);
-    }
-
 
 }

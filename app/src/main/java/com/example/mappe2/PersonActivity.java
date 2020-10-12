@@ -3,12 +3,10 @@ package com.example.mappe2;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import com.google.android.material.textfield.TextInputEditText;
 
 public class PersonActivity extends AppCompatActivity {
@@ -32,9 +30,8 @@ public class PersonActivity extends AppCompatActivity {
         bundle = getIntent().getExtras();
 
         if(bundle != null){
-            navn.setText(bundle.getString("navn2"));
-            telfonnr.setText(bundle.getString("telefonnr2"));
-
+            navn.setText(bundle.getString("navn1"));
+            telfonnr.setText(bundle.getString("telefonnr1"));
         }
 
     }

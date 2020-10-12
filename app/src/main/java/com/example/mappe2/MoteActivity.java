@@ -3,8 +3,6 @@ package com.example.mappe2;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,7 +14,6 @@ public class MoteActivity extends AppCompatActivity {
     private TextInputEditText navn, type, sted, dato;
     private Bundle extras;
     private Toolbar toolbar;
-    //private int key = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,18 +37,7 @@ public class MoteActivity extends AppCompatActivity {
             dato.setText(extras.getString("dato"));
         }
 
-        /*Intent intent = getIntent();
-        key = intent.getIntExtra(MainActivity.KEY, -1);
-
-        if(key == -1){
-
-        }
-        else {
-
-        }*/
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -60,16 +46,7 @@ public class MoteActivity extends AppCompatActivity {
         MenuItem lagre = menu.findItem(R.id.meny_lagre);
         MenuItem endre = menu.findItem(R.id.meny_endre);
         MenuItem slette = menu.findItem(R.id.meny_slette);
-        /*if(key == -1){
-            lagre.setVisible(true);
-            endre.setVisible(false);
-            slette.setVisible(false);
-        }
-        else {
-            lagre.setVisible(false);
-            endre.setVisible(true);
-            slette.setVisible(true);
-        }*/
+
         return true;
     }
 
